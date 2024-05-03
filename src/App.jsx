@@ -44,7 +44,7 @@ function App() {
                     {singleMatch.matchInfo.team1.teamSName}
                     </h2>
                   <h2 className="score">
-                    {singleMatch.matchScore?.team1Score.inngs1.runs}/{singleMatch.matchScore?.team1Score.inngs1.wickets} ({singleMatch.matchScore?.team1Score.inngs1.overs})
+                    {singleMatch.matchScore?.team1Score?.inngs1.runs}/{singleMatch.matchScore?.team1Score?.inngs1.wickets} ({singleMatch.matchScore?.team1Score?.inngs1.overs})
                     </h2>
                 </div>
 
@@ -53,7 +53,7 @@ function App() {
                     {singleMatch.matchInfo.team2.teamSName}
                     </h2>
                   <h2 className="score">
-                  {singleMatch.matchScore?.team2Score.inngs1.runs}/{singleMatch.matchScore?.team2Score.inngs1.wickets} ({singleMatch.matchScore?.team2Score.inngs1.overs})
+                  {singleMatch.matchScore?.team2Score?.inngs1.runs}/{singleMatch.matchScore?.team2Score?.inngs1.wickets} ({singleMatch.matchScore?.team2Score?.inngs1.overs})
                   </h2>
                 </div>
 

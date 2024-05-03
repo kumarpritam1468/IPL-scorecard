@@ -9,7 +9,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #121212;
+    background: #222130;
     overflow-x: hidden;
 }
 
@@ -17,21 +17,25 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    column-gap: 4rem;
     padding: 3rem 0;
 }
 
 .matchCard{
-    width: 40vw;
+    width: 35vw;
     height: 15rem;
     padding: 1rem 2rem;
-    background: black;
-    color: white;
-    border-radius: 1rem;
+    background: linear-gradient(to right, #84C3DC, #7CE2FA);
+    color: black;
     border: 2px solid white;
+    border-radius: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+}
+
+.matchCard h3{
+    text-align: left;
 }
 
 .matchCard .teamWithScore{
