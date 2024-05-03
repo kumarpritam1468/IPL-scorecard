@@ -28,16 +28,43 @@ function App() {
     }).catch((error) => {
       console.error(error);
     });
-  },[]);
+  }, []);
 
   return (
-    <>
+    <div className="container">
       {matchesData?.map((item, index) => (
-        <h1 key={index}>
-          {item.matchDetailsMap.key}
-        </h1>
+          item.matchDetailsMap.match?.map((singleMatch, index) => {
+            console.log(singleMatch)
+            return (
+              <div className="matchCard" key={index}>
+                <h3 className="matchNo">{singleMatch.matchInfo.matchDesc} {singleMatch.matchInfo.seriesName}</h3>
+
+                <div className="teamWithScore">
+                  <h2 className="team">
+                    {singleMatch.matchInfo.team1.teamSName}
+                    </h2>
+                  <h2 className="score">
+                    {singleMatch.matchScore?.team1Score.inngs1.runs}/{singleMatch.matchScore?.team1Score.inngs1.wickets} ({singleMatch.matchScore?.team1Score.inngs1.overs})
+                    </h2>
+                </div>
+
+                <div className="teamWithScore">
+                  <h2 className="team">
+                    {singleMatch.matchInfo.team2.teamSName}
+                    </h2>
+                  <h2 className="score">
+                  {singleMatch.matchScore?.team2Score.inngs1.runs}/{singleMatch.matchScore?.team2Score.inngs1.wickets} ({singleMatch.matchScore?.team2Score.inngs1.overs})
+                  </h2>
+                </div>
+
+                <h3 className="result">
+                  {singleMatch.matchInfo.status}
+                </h3>
+              </div>
+            )
+          })
       ))}
-    </>
+    </div>
   )
 }
 

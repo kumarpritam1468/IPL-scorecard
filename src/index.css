@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121212;
+    overflow-x: hidden;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.matchCard{
+    width: 40vw;
+    height: 15rem;
+    padding: 1rem 2rem;
+    background: black;
+    color: white;
+    border-radius: 1rem;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.matchCard .teamWithScore{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
