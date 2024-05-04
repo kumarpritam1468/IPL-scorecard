@@ -13,6 +13,10 @@ body{
     overflow-x: hidden;
 }
 
+a{
+    text-decoration: none;
+}
+
 .container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -27,8 +31,9 @@ body{
     padding: 1rem 2rem;
     background: linear-gradient(to right, #84C3DC, #7CE2FA);
     color: black;
+    box-shadow: .1rem .1rem 2rem #7ce3fa9f;
     border: 2px solid white;
-    border-radius: 3rem;
+    border-radius: .5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -42,5 +47,15 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.teamWithScore img{
+    width: 2.3rem;
+}
+
+.matchCard .teamWithScore > div{
+    display: flex;
+    gap: .6rem;
     align-items: center;
 }
