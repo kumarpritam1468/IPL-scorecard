@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home/>} />
-          <Route path='/matchDetails/:id' element={<MatchDetails/>} />
+          <Route path='/matchDetails/:id/:imgId1/:imgId2' element={<MatchDetails/>} />
         </Routes>
       </Router>
     </>

@@ -36,9 +36,9 @@ const Home = () => {
         <div className="container">
             {matchesData?.map((item, index) => (
                 item.matchDetailsMap.match?.map((singleMatch, index) => {
-                    console.log(singleMatch)
+                    // console.log(singleMatch)
                     return (
-                        <Link to={`/matchDetails/${singleMatch.matchInfo.matchId}`} className="matchCard" key={index}>
+                        <Link to={`/matchDetails/${singleMatch.matchInfo.matchId}/${singleMatch.matchInfo.team1.imageId}/${singleMatch.matchInfo.team2.imageId}`} className="matchCard" key={index}>
                             <h3 className="matchNo">{singleMatch.matchInfo.matchDesc} {singleMatch.matchInfo.seriesName}</h3>
 
                             <div className="teamWithScore">
