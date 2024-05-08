@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from 'react-router-dom';
-import Image from './Image';
 
 const Home = () => {
     const [matchesData, setMatchesData] = useState([]);
@@ -38,12 +37,13 @@ const Home = () => {
                 item.matchDetailsMap.match?.map((singleMatch, index) => {
                     // console.log(singleMatch)
                     return (
-                        <Link to={`/matchDetails/${singleMatch.matchInfo.matchId}/${singleMatch.matchInfo.team1.imageId}/${singleMatch.matchInfo.team2.imageId}`} className="matchCard" key={index}>
+                        <Link to={`/matchDetails/${singleMatch.matchInfo.matchId}`} className="matchCard" key={index}>
                             <h3 className="matchNo">{singleMatch.matchInfo.matchDesc} {singleMatch.matchInfo.seriesName}</h3>
 
                             <div className="teamWithScore">
                                 <div>
-                                    <Image imageId={singleMatch.matchInfo.team1.imageId} alt={'team image'} />
+                                    {/* <Image team={singleMatch.matchInfo.team1.teamSName} /> */}
+                                    <img src={`/assets/${singleMatch.matchInfo.team1.teamSName}.png`} alt="" />
                                     <h2 className="team">
                                         {singleMatch.matchInfo.team1.teamSName}
                                     </h2>
@@ -55,7 +55,7 @@ const Home = () => {
 
                             <div className="teamWithScore">
                                 <div>
-                                    <Image imageId={singleMatch.matchInfo.team2.imageId} alt={'team image'} />
+                                    <img src={`/assets/${singleMatch.matchInfo.team2.teamSName}.png`} alt="" />
                                     <h2 className="team">
                                         {singleMatch.matchInfo.team2.teamSName}
                                     </h2>

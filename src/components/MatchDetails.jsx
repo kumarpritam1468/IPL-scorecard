@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Image from './Image';
 
 const MatchDetails = () => {
-    let { id, imgId1, imgId2 } = useParams();
+    let { id } = useParams();
 
     const [singleMatch, setSingleMatch] = useState({});
     const [activeTeam, setActiveTeam] = useState('team1');
     const [activeSquad, setActiveSquad] = useState([]);
 
     const setSquad = () => {
-        if(activeTeam === 'team1'){
+        if (activeTeam === 'team1') {
             setActiveSquad(singleMatch?.matchInfo?.team1.playerDetails);
         }
-        else{
+        else {
             setActiveSquad(singleMatch?.matchInfo?.team2.playerDetails);
         }
     }
@@ -52,12 +51,12 @@ const MatchDetails = () => {
 
                 <div className='match'>
                     <div>
-                        <Image imageId={imgId2} />
+                        <img src={`/assets/${singleMatch?.matchInfo?.team1.shortName}.png`} alt="" />
                         <h2>{singleMatch?.matchInfo?.team1.shortName}</h2>
                     </div>
                     <h1>VS</h1>
                     <div>
-                        <Image imageId={imgId1} />
+                        <img src={`/assets/${singleMatch?.matchInfo?.team2.shortName}.png`} alt="" />
                         <h2>{singleMatch?.matchInfo?.team2.shortName}</h2>
                     </div>
                 </div>
