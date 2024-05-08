@@ -21,7 +21,7 @@ a{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    column-gap: 4rem;
+    column-gap: 0;
     padding: 3rem 0;
 }
 
@@ -114,7 +114,8 @@ img{
     scale: .8;
 }
 
-.toggle h1{
+.toggle h1,
+.navbar a{
     width: 20rem;
     height: 4rem;
     display: flex;
@@ -128,7 +129,13 @@ img{
     cursor: pointer;
 }
 
-.toggle h1.active{
+.navbar a{
+    width: 10rem;
+    height: 3rem;
+}
+
+.toggle h1.active,
+.navbar a.active{
     color: black;
     background: #7CE2FA;
     box-shadow: 0 0 .5rem #7CE2FA;
@@ -150,4 +157,16 @@ img{
 .squad > div > h2:nth-child(2){
     color: rgb(184, 184, 184);
     font-size: 1rem;
+}
+
+.navbar{
+    height: 13vh;
+    width: 100vw;
+    background: black;
+    border-bottom: 2px solid white;
+    box-shadow: 0 0 1rem #7CE2FA;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
 }

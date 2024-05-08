@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Home = () => {
     const [matchesData, setMatchesData] = useState([]);
@@ -32,47 +33,50 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="container">
-            {matchesData?.map((item, index) => (
-                item.matchDetailsMap.match?.map((singleMatch, index) => {
-                    // console.log(singleMatch)
-                    return (
-                        <Link to={`/matchDetails/${singleMatch.matchInfo.matchId}`} className="matchCard" key={index}>
-                            <h3 className="matchNo">{singleMatch.matchInfo.matchDesc} {singleMatch.matchInfo.seriesName}</h3>
+        <>
+            <Navbar/>
+            <div className="container">
+                {matchesData?.map((item, index) => (
+                    item.matchDetailsMap.match?.map((singleMatch, index) => {
+                        // console.log(singleMatch)
+                        return (
+                            <Link to={`/matchDetails/${singleMatch.matchInfo.matchId}`} className="matchCard" key={index}>
+                                <h3 className="matchNo">{singleMatch.matchInfo.matchDesc} {singleMatch.matchInfo.seriesName}</h3>
 
-                            <div className="teamWithScore">
-                                <div>
-                                    {/* <Image team={singleMatch.matchInfo.team1.teamSName} /> */}
-                                    <img src={`/assets/${singleMatch.matchInfo.team1.teamSName}.png`} alt="" />
-                                    <h2 className="team">
-                                        {singleMatch.matchInfo.team1.teamSName}
+                                <div className="teamWithScore">
+                                    <div>
+                                        {/* <Image team={singleMatch.matchInfo.team1.teamSName} /> */}
+                                        <img src={`/assets/${singleMatch.matchInfo.team1.teamSName}.png`} alt="" />
+                                        <h2 className="team">
+                                            {singleMatch.matchInfo.team1.teamSName}
+                                        </h2>
+                                    </div>
+                                    <h2 className="score">
+                                        {singleMatch.matchScore?.team1Score?.inngs1.runs}/{singleMatch.matchScore?.team1Score?.inngs1.wickets} ({singleMatch.matchScore?.team1Score?.inngs1.overs})
                                     </h2>
                                 </div>
-                                <h2 className="score">
-                                    {singleMatch.matchScore?.team1Score?.inngs1.runs}/{singleMatch.matchScore?.team1Score?.inngs1.wickets} ({singleMatch.matchScore?.team1Score?.inngs1.overs})
-                                </h2>
-                            </div>
 
-                            <div className="teamWithScore">
-                                <div>
-                                    <img src={`/assets/${singleMatch.matchInfo.team2.teamSName}.png`} alt="" />
-                                    <h2 className="team">
-                                        {singleMatch.matchInfo.team2.teamSName}
+                                <div className="teamWithScore">
+                                    <div>
+                                        <img src={`/assets/${singleMatch.matchInfo.team2.teamSName}.png`} alt="" />
+                                        <h2 className="team">
+                                            {singleMatch.matchInfo.team2.teamSName}
+                                        </h2>
+                                    </div>
+                                    <h2 className="score">
+                                        {singleMatch.matchScore?.team2Score?.inngs1.runs}/{singleMatch.matchScore?.team2Score?.inngs1.wickets} ({singleMatch.matchScore?.team2Score?.inngs1.overs})
                                     </h2>
                                 </div>
-                                <h2 className="score">
-                                    {singleMatch.matchScore?.team2Score?.inngs1.runs}/{singleMatch.matchScore?.team2Score?.inngs1.wickets} ({singleMatch.matchScore?.team2Score?.inngs1.overs})
-                                </h2>
-                            </div>
 
-                            <h3 className="result">
-                                {singleMatch.matchInfo.status}
-                            </h3>
-                        </Link>
-                    )
-                })
-            ))}
-        </div>
+                                <h3 className="result">
+                                    {singleMatch.matchInfo.status}
+                                </h3>
+                            </Link>
+                        )
+                    })
+                ))}
+            </div>
+        </>
     )
 }
 

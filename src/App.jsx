@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import Home from './components/Home';
 import MatchDetails from './components/MatchDetails';
+import Table from './components/Table';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home/>} />
+          <Route path='/table' element={<Table/>} />
           <Route path='/matchDetails/:id' element={<MatchDetails/>} />
         </Routes>
       </Router>
