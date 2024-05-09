@@ -6,9 +6,6 @@
 
 body{
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: #222130;
     overflow-x: hidden;
 }
@@ -24,6 +21,7 @@ a{
     column-gap: 0;
     place-items: center;
     padding: 3rem 0;
+    padding-top: 18vh;
 }
 
 .matchCard{
@@ -170,12 +168,14 @@ img{
     gap: 4rem;
     justify-content: center;
     align-items: center;
+    position: fixed;
 }
 
 .tablePage{
-    height: 87vh;
+    height: 100svh;
     display: flex;
     justify-content: center;
+    padding-top: 15vh;
 }
 
 .table{
@@ -217,6 +217,10 @@ img{
 
 .row > div > h4{
     text-align: right;
+}
+
+.match img{
+    height: 4rem;
 }
 
 @media screen and (max-width:728px) {

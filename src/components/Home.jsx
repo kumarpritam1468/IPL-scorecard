@@ -32,15 +32,25 @@ const Home = () => {
         });
     }, []);
 
+    useEffect(() => {
+        const element = document.querySelector('.target');
+
+        // Scroll to the element if found
+        if (element) {
+            const targetScrollPosition = element.offsetTop - 300;
+            window.scrollTo({ top: targetScrollPosition, behavior: 'smooth' });
+        }
+    }, [matchesData]);
+
     return (
         <>
-            <Navbar/>
+            <Navbar />
             <div className="container">
                 {matchesData?.map((item, index) => (
                     item.matchDetailsMap.match?.map((singleMatch, index) => {
-                        // console.log(singleMatch)
+                        // console.log(singleMatch);
                         return (
-                            <Link to={`/matchDetails/${singleMatch.matchInfo.matchId}`} className="matchCard" key={index}>
+                            <Link to={`/matchDetails/${singleMatch.matchInfo.matchId}`} className={`matchCard ${singleMatch.matchInfo.state === 'Upcoming' ? 'target' : ''}`} key={index} >
                                 <h3 className="matchNo">{singleMatch.matchInfo.matchDesc} {singleMatch.matchInfo.seriesName}</h3>
 
                                 <div className="teamWithScore">
