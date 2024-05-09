@@ -22,11 +22,12 @@ a{
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     column-gap: 0;
+    place-items: center;
     padding: 3rem 0;
 }
 
 .matchCard{
-    width: 35vw;
+    width: 80%;
     height: 15rem;
     padding: 1rem 2rem;
     background: linear-gradient(to right, #84C3DC, #7CE2FA);
@@ -169,4 +170,101 @@ img{
     gap: 4rem;
     justify-content: center;
     align-items: center;
+}
+
+.tablePage{
+    height: 87vh;
+    display: flex;
+    justify-content: center;
+}
+
+.table{
+    padding: 2rem;
+    width: 60vw;
+    /* box-shadow: 0 0 3rem #7CE2FA; */
+    box-shadow: -3rem 0 5rem -5rem #7CE2FA, 3rem 0 5rem -5rem #7CE2FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    padding: 0.5rem 0rem;
+    color: white;
+}
+
+.row> div:nth-child(1){
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.row> div:nth-child(1) > img{
+    height: 1.3rem;
+}
+
+.row> div:nth-child(2){
+    display: flex; 
+    gap: 1rem;
+    width: 25%;
+    justify-content: center;
+}
+
+.row > div > h4{
+    text-align: right;
+}
+
+@media screen and (max-width:728px) {
+    html{
+        font-size: 70%;
+    }
+
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .matchCard{
+        padding: 0.5rem 1rem;
+        height: 15rem;
+        width: 90%;
+    }
+
+    .navbar{
+        gap: 1rem;
+        height: 10vh;
+    }
+
+    .row> div:nth-child(2){
+        width: 50%;
+    }
+
+    .table{
+        height: 90vh;
+        width: 100vw;
+        box-shadow: none;
+        font-size: 100%;
+    }
+
+    .matchDetails{
+        width: 100vw;
+        box-shadow: none;
+        overflow-x: hidden;
+    }
+
+    .match{
+        width: 100vw;
+    }
+
+    .toggle{
+        scale: .5;
+    }
+
+    .squad{
+        padding-left: 11rem;
+    }
 }
